@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  mysql:
+    image: custom-mysql-image
+    build: ./mysql
+    container_name: mysql
+    ports:
+      # Port mapping format (change if needed) - HOST:CONTAINER
+      - "4306:3306"
+    networks:
+      - demo-network
+    tty: true
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+  backend:
+    image: gridgain/gridgain-web-console-backend:2020.03.01
+    # Restart in case of failures.
+    restart: always
+    tty: true
+    container_name: gridgain-webconsole-backend
+    volumes:
+      - ./gridgain-console-work:/opt/gridgain-web-console-server/work
+    networks:
+      - demo-network
+
+  frontend:
+    image: gridgain/gridgain-web-console-frontend:2020.03.01
+    container_name: gridgain-webconsole-frontend
+    tty: true
+    depends_on:
+      - backend
+    networks:
+      - demo-network
+    ports:
+      # Port mapping format (change if needed) - HOST:CONTAINER
+      - 9090:8008
+
+networks:
+  demo-network:
+    driver: bridge

@@ -1,0 +1,4 @@
+[mysqld]
+secure-file-priv=/data
+local_infile=1
+server-id=1234
