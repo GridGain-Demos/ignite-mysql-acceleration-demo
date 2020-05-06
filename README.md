@@ -2,7 +2,9 @@
 
 The demo shows how to deploy an Apache Ignite cluster on top of a MySQL database to accelerate the latter.
 
-<img src="images/ignite_and_mysql.png" width="40%">
+<div style="text-align: center;">
+    <img src="images/ignite_and_mysql.png" width="40%">
+</div>
  
 In particular, you will learn to do the following:
 * Prepare an Ignite configuration from a MySQL database using GridGain WebConsole.
