@@ -1,4 +1,4 @@
-# MySQL Caching and Acceleration With Apache Ignite Demo
+# Demo: MySQL Caching and Acceleration With Apache Ignite
 
 The demo shows how to deploy an Apache Ignite cluster on top of a MySQL database to accelerate the latter.
 
@@ -7,7 +7,7 @@ The demo shows how to deploy an Apache Ignite cluster on top of a MySQL database
 In particular, you will learn to do the following:
 * Prepare an Ignite configuration from a MySQL database using GridGain WebConsole.
 * Run several nodes Ignite cluster and load it with the records from MySQL.
-* Run SQL queries in Ignite including queries with distributed joins.
+* Run SQL queries in Ignite, including queries with distributed joins.
 * Update data in Ignite and get changes automatically synchronized to MySQL.
 
 ## Deploying MySQL and GridGain WebConsole
